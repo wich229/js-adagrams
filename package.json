@@ -1,0 +1,19 @@
+{
+  "name": "js-adagrams",
+  "version": "1.0.0",
+  "description": "JavaScript version of the Adagrams project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AdaGold/js-adagrams.git"
+  },
+  "author": "Ada Developers Academy <contact@adadevelopersacademy.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdaGold/js-adagrams/issues"
+  },
+  "homepage": "https://github.com/AdaGold/js-adagrams#readme"
+}
