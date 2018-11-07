@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/AdaGold/js-adagrams/issues"
   },
-  "homepage": "https://github.com/AdaGold/js-adagrams#readme"
+  "homepage": "https://github.com/AdaGold/js-adagrams#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5"
+  }
 }
