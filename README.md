@@ -46,7 +46,7 @@ This repository has a baseline structure for the project which includes several 
 
 File | Description
 --- | ---
-src/adagrams.js | This is the project code, you implementation should be written here as functions within the `Adagrams` object.
+src/adagrams.js | This is the project code, your implementation should be written here as functions within the `Adagrams` object.
 specs/adagrams.spec.js | This file contains the unit tests for all functions you must implement.
 package.json | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `Gemfile` in our Ruby projects.
 package-lock.json | This is equivalent to the `Gemfile.lock` file in our Ruby projects.
