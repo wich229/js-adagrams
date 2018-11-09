@@ -79,7 +79,64 @@ describe('Adagrams', () => {
         'XXXXXXX': 64,
         'XXXXXXXX': 72,
         'XXXXXXXXX': 80,
-        'XXXXXXXXXX': 88
+        'XXXXXXXXXX': 88,
+      });
+    });
+  });
+
+  describe('highestScoreFrom', () => {
+    const scoredWord = (word) => ({ word, score: Adagrams.scoreWord(word) });
+
+    it('returns a hash that contains the word and score of best word in an array', () => {
+      const words = ['X', 'XX', 'XXX', 'XXXX'];
+      const correct = scoredWord('XXXX');
+
+      expect(Adagrams.highestScoreFrom(words)).toEqual(correct);
+    });
+
+    it('accurately finds best scoring word even if not sorted', () => {
+      const words = ['XXX', 'XXXX', 'X', 'XX'];
+      const correct = scoredWord('XXXX');
+
+      expect(Adagrams.highestScoreFrom(words)).toEqual(correct);
+    });
+
+    describe('in case of tied score', () => {
+      const expectTie = (words) => {
+        const scores = words.map(Adagrams.scoreWord);
+        const highScore = scores.reduce((h, s) => h < s ? s : h, 0);
+        const tiedWords = scores.filter((s) => s == highScore);
+
+        // Expect at least two tied words
+        expect(tiedWords.length).toBeGreaterThan(1);
+      };
+
+      it('selects the word with 10 letters', () => {
+        const words = ['AAAAAAAAAA', 'BBBBBB'];
+        const correct = scoredWord('AAAAAAAAAA');
+        expectTie(words);
+
+        expect(Adagrams.highestScoreFrom(words)).toEqual(correct);
+        expect(Adagrams.highestScoreFrom(words.reverse())).toEqual(correct);
+      });
+
+      it('selects the word with fewer letters when neither are 10 letters', () => {
+        const words = ['MMMM', 'WWW'];
+        const correct = scoredWord('WWW');
+        expectTie(words);
+
+        expect(Adagrams.highestScoreFrom(words)).toEqual(correct);
+        expect(Adagrams.highestScoreFrom(words.reverse())).toEqual(correct);
+      });
+
+      it('selects the first word when both have same length', () => {
+        const words = ['AAAAAAAAAA', 'EEEEEEEEEE'];
+        const first = scoredWord('AAAAAAAAAA');
+        const second = scoredWord('EEEEEEEEEE');
+        expectTie(words);
+
+        expect(Adagrams.highestScoreFrom(words)).toEqual(first);
+        expect(Adagrams.highestScoreFrom(words.reverse())).toEqual(second);
       });
     });
   });
