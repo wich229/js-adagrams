@@ -136,25 +136,5 @@ Add a method called `highestScoreFrom` in `src/adagrams.js`. This method should 
     - ...unless one word has 10 letters. If the top score is tied between multiple words and one is 10 letters long, choose the one with 10 letters over the one with fewer tiles
     - If the there are multiple words that are the same score and the same length, pick the first one in the supplied list
 
-<!--
-### Optional: Wave 5
-
-We want to be able to verify that a word that a player submits is a valid word against the English dictionary.
-
-We have the English dictionary available as a CSV file. We want to write a method that checks an input word against the words listed in the CSV file. If the word is found in the CSV file, then the word is valid and can be played.
-
-Add a method called `isInEnglishDict` in `src/adagrams.js`. This method should have the following properties:
-
-- Has one parameter: `input`, which is a string
-- Returns a boolean
-  - `true`, if `input` is in the provided English dictionary
-  - `false`, if `input` is not in the provided English dictionary
-- Uses the English dictionary found in `assets/dictionary-english.csv`
-
-There are no unit tests provided for this wave, but there is driver code found in `wave-5-game.rb`. Feel free to alter `specs/adagrams.spec.js` and add some!
-
-Nota Bene: The original data for all of the alpha words of the English dictionary was found freely available at [`dwyl/english-word`'s repo](https://github.com/dwyl/english-words), and was modified to only include words under 10 characters.
--->
-
 ## What Instructors Are Looking For
 Check out the [feedback template](feedback.md) which lists the items instructors will be looking for as they evaluate your project.
