@@ -53,6 +53,29 @@ package-lock.json | This is equivalent to the `Gemfile.lock` file in our Ruby pr
 jest.config.js | This is a configuration file for the Jest testing framework.
 babel.config.js | This is a configuration file for the [Babel](https://babeljs.io/) compiler. For a short summary of why we use it, [click here](https://github.com/AdaGold/backbone-baseline#major-components)
 
+#### Provided code
+In the `src/adagrams.js` file there is a bit of code provided already. This is the structure that your code should follow in order for the pre-written unit tests to find and call your functions properly.
+
+The code first creates a constant `Adagrams` and assigns it an object literal:
+```js
+const Adagrams = {
+  drawLetters() {
+    // Implement this method for wave 1
+  },
+};
+```
+
+The `Adagrams` object is used here as the equivalent of a Ruby module.
+
+We've previously seen JavaScript objects used as hashes, and seen them act sort of like class instances with `this`, and now modules. Because of the language's design JavaScript's object type is flexible enough to unify all three of these concepts which are each distinct in Ruby.
+
+The code ends with this line:
+```js
+export default Adagrams;
+```
+
+This line is necessary to allow our unit test file (`specs/adagrams.spec.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Ruby, with JavaScript if we want to allow other files to access a piece of code we've written we must explicity [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
+
 ## Implementation Requirements
 ### Wave 1
 Our first job is to build a hand of 10 letters. To do so, add a function called `Adagrams.drawLetters` in `src/adagrams.js`. This method should have the following properties:
