@@ -39,7 +39,7 @@ $ npm run coverage
 This is shorthand for the command `open coverage/lcov-report/index.html` and will open the coverage report in your default web browser.
 
 ### Driver Code
-We have provided some driver code for your Adagrams game in the files `wave-1-game.rb`, `wave-2-game.rb`, `wave-3-game.rb`, and `wave-4-game.rb`. Running `$ ruby wave-1-game.rb` will begin a command-line game that uses your Adagrams code. The boilerplate code will break the first time you run it: working through the waves specified below should create a running version of the game. **Implementing code to make this game run is not a substitute for making the tests pass**. It is simply there for you and your pair to reference how the Game may run during each wave, to have better perspective of what your program can do, and to get some practice reading other peoples' code. We fully expect you to create the specified methods to specification and making the tests pass.
+We have provided some driver code for your Adagrams game in the files `wave-1-game.rb`, `wave-2-game.rb`, `wave-3-game.rb`, and `wave-4-game.rb`. Running `$ ruby wave-1-game.rb` will begin a command-line game that uses your Adagrams code. The boilerplate code will break the first time you run it: working through the waves specified below should create a running version of the game. **Implementing code to make this game run is not a substitute for making the tests pass**. It is simply there for you and your pair to reference how the Game may run during each wave, to have better perspective of what your program can do, and to get some practice reading other peoples' code. We fully expect you to create the specified functions to specification and making the tests pass.
 
 ### Project Structure
 This repository has a baseline structure for the project which includes several files. You will only need to modify one of them:
@@ -55,7 +55,7 @@ babel.config.js | This is a configuration file for the [Babel](https://babeljs.i
 
 ## Implementation Requirements
 ### Wave 1
-Our first job is to build a hand of 10 letters. To do so, add a method called `Adagrams.drawLetters` in `src/adagrams.js`. This method should have the following properties:
+Our first job is to build a hand of 10 letters. To do so, add a function called `Adagrams.drawLetters` in `src/adagrams.js`. This method should have the following properties:
 
 - No parameters
 - Returns an array of ten strings
@@ -65,7 +65,7 @@ Our first job is to build a hand of 10 letters. To do so, add a method called `A
   - This letter pool should reflect the distribution of letters as described in the table below
   - There are only 2 available `C` letters, so `drawLetters` cannot ever return more than 2 `C`s
   - Since there are 12 `E`s but only 1 `Z`, it should be 12 times as likely to draw an `E` as a `Z`
-- Invoking this method should **not** change the pool of letters
+- Invoking this function should **not** change the pool of letters
   - Imagine that the user returns their hand to the pool before drawing new letters
 
 #### Distribution of Letters
@@ -91,7 +91,7 @@ Our first job is to build a hand of 10 letters. To do so, add a method called `A
 ### Wave 2
 Next, we need a way to check if an input word (a word a player submits) only uses characters that are contained within a collection (or hand) of drawn letters. Essentially, we need a way to check if the word is, indeed, an anagram of some or all of the given letters in the hand.
 
-To do so, add a method called `Adagrams.usesAvailableLetters` in `src/adagrams.js`. This method should have the following properties:
+To do so, add a function called `Adagrams.usesAvailableLetters` in `src/adagrams.js`. This method should have the following properties:
 
 - Has two parameters:
    - `input`, the first parameter, describes some input word, and is a string
@@ -101,9 +101,9 @@ To do so, add a method called `Adagrams.usesAvailableLetters` in `src/adagrams.j
 - Returns `false` if not; if there is a letter in `input` that is not present in the `lettersInHand` or has too much of compared to the `lettersInHand`
 
 ### Wave 3
-We want a method that returns the score of a given word as defined by the Adagrams game.
+We want a function that returns the score of a given word as defined by the Adagrams game.
 
-Name this method `scoreWord` in `src/adagrams.js`. This method should have the following properties:
+Name this function `scoreWord` in `src/adagrams.js`. This method should have the following properties:
 
 - Has one parameter: `word`, which is a string of characters
 - Returns an integer representing the number of points
@@ -123,9 +123,9 @@ Name this method `scoreWord` in `src/adagrams.js`. This method should have the f
 |Q, Z                          |   10 |
 
 ### Wave 4
-After several hands have been drawn, words have been submitted, checked, scored, and played, we want a way to find the highest scoring word. This method looks at the array of `words` and calculates which of these words has the highest score, applies any tie-breaking logic, and returns the winning word in a special data structure.
+After several hands have been drawn, words have been submitted, checked, scored, and played, we want a way to find the highest scoring word. This function looks at the array of `words` and calculates which of these words has the highest score, applies any tie-breaking logic, and returns the winning word in a special data structure.
 
-Add a method called `highestScoreFrom` in `src/adagrams.js`. This method should have the following properties:
+Add a function called `highestScoreFrom` in `src/adagrams.js`. This method should have the following properties:
 
 - Has one parameter: `words`, which is an array of strings
 - Returns a single hash that represents the data of a winning word and its score. The hash should have the following keys:
