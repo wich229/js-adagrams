@@ -5,6 +5,9 @@ class Model {
     }
 
     this.config = config;
+
+    // Initialize game state
+    this.round = 0;
   }
 }
 

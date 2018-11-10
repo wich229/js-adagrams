@@ -22,5 +22,11 @@ describe('Game Model', () => {
         const model = new Model();
       }).toThrow(/config/);
     });
+
+    it('initializes the round number to zero', () => {
+      const model = new Model(config);
+
+      expect(model.round).toBe(0);
+    });
   });
 });
