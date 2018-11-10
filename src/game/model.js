@@ -8,6 +8,24 @@ class Model {
 
     // Initialize game state
     this.round = 0;
+
+    /* Plays history structure is:
+        {
+          playerOne: [
+            ["APPLE", "PAPA", "LEAP"],    // round 1
+            ["WALK", "WALKER", "RAKE"],   // round 2
+          ],
+
+          playerTwo: [
+            ["PALE", "PELT"],             // round 1
+            ["REAL", "WALTER", "TALKER"], // round 2
+          ],
+        }
+    */
+    this.plays = this.config.players.reduce((plays, player) => {
+      plays[player] = [];
+      return plays;
+    }, {});
   }
 }
 

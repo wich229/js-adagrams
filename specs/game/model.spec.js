@@ -28,5 +28,16 @@ describe('Game Model', () => {
 
       expect(model.round).toBe(0);
     });
+
+    it('initializes the plays history', () => {
+      const model = new Model(config);
+
+      expect(model.plays).toBeInstanceOf(Object);
+      config.players.forEach((player) => {
+        expect(model.plays).toHaveProperty(player);
+        expect(model.plays[player]).toBeInstanceOf(Array);
+        expect(model.plays[player]).toHaveLength(0);
+      });
+    });
   });
 });
