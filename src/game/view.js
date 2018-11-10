@@ -10,8 +10,19 @@ const View = {
     menu.show();
   },
 
-  init() {
+  exit() {
+    menu.log(MESSAGES.exit);
+  },
+
+  init(callbacks) {
     menu.delimiter('Adagrams>');
+
+    menu
+      .find('exit')
+      .action((_, done) => {
+        callbacks.exit();
+        done();
+      });
   },
 };
 

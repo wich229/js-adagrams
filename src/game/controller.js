@@ -3,11 +3,18 @@ class Controller {
     this.model = model;
     this.view = view;
 
-    this.view.init();
+    this.view.init({
+      exit: this.exit.bind(this),
+    });
   }
 
   start() {
     this.view.start();
+  }
+
+  exit() {
+    this.view.exit();
+    process.exit();
   }
 }
 
