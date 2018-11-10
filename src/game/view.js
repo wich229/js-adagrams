@@ -6,6 +6,12 @@ const menu = new Vorpal();
 const View = {
   start(play, exit) {
     menu.log(MESSAGES.intro);
+
+    menu.show();
+  },
+
+  init() {
+    menu.delimiter('Adagrams>');
   },
 };
 
