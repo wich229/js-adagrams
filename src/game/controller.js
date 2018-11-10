@@ -3,6 +3,10 @@ class Controller {
     this.model = model;
     this.view = view;
   }
+
+  start() {
+    this.view.start();
+  }
 }
 
 export default Controller;
