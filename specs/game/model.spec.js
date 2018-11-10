@@ -1,7 +1,14 @@
 import Model from 'game/model';
 
 describe('Game Model', () => {
-  const config = {};
+  const config = {
+    players: [
+      'Player A',
+      'Player B',
+    ],
+    rounds: 3,
+    time: 60, // Seconds
+  };
 
   describe('constructor', () => {
     it('creates a new Model instance', () => {
