@@ -32,8 +32,38 @@ const View = {
         const rounds = args.options.rounds;
         const time = args.options.time;
 
-        callbacks.play(numPlayers, rounds, time);
-        done();
+        // Player name selection
+        const validName = (name) => /\w/.test(name.trim());
+
+        let questions;
+        if(!Number.isInteger(numPlayers) || numPlayers < 2) {
+          // Default to a solo game
+          questions = [{
+            name: 'player0',
+            message: 'Player Name: ',
+            validate: validName
+          }];
+        } else {
+          questions = [...Array(numPlayers).keys()].map((n) => ({
+            name: `player${n}`,
+            message: `Player ${n + 1} Name: `,
+            validate: validName
+          }));
+        }
+
+        menu.activeCommand.prompt(questions, (answers) => {
+          const PROP_REGEX = /^player(\d+)$/;
+
+          let playerNames =
+            Object.entries(answers)
+            .map(([prop, val]) => [PROP_REGEX.exec(prop), val.trim()])
+            .filter(([match, val]) => !!match)
+            .sort(([[_, leftNum]], [[__, rightNum]]) => Number(leftNum) - Number(rightNum))
+            .map(([_, name]) => name);
+
+          callbacks.play(playerNames, rounds, time);
+          done();
+        });
       });
 
     menu
