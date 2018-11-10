@@ -9,5 +9,11 @@ describe('Game Model', () => {
 
       expect(model).toBeInstanceOf(Model);
     });
+
+    it('requires a config parameter', () => {
+      expect(() => {
+        const model = new Model();
+      }).toThrow(/config/);
+    });
   });
 });
