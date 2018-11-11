@@ -57,5 +57,13 @@ describe('Game Model', () => {
 
       expect(model.round).toBe(roundBefore + 1);
     });
+
+    it('initializes the current player number to first player', () => {
+      const model = new Model(config);
+
+      model.nextRound();
+
+      expect(model.currentPlayer).toBe(0);
+    });
   });
 });
