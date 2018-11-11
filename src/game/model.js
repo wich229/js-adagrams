@@ -1,3 +1,5 @@
+import Adagrams from 'game/adagrams';
+
 class Model {
   constructor(config) {
     if(!config) {
@@ -34,6 +36,9 @@ class Model {
   nextRound() {
     this.round++;
     this.currentPlayer = 0;
+
+    // Draw the letter bank
+    this.letterBank = Adagrams.drawLetters();
   }
 }
 

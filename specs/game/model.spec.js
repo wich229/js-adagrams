@@ -77,5 +77,17 @@ describe('Game Model', () => {
 
       expect(model.currentPlayer).toBe(0);
     });
+
+    it('draws a new hand of letters', () => {
+      const model = new Model(config);
+
+      model.nextRound();
+
+      expect(model.letterBank).toBeInstanceOf(Array);
+      expect(model.letterBank).toHaveLength(10);
+      model.letterBank.forEach((letter) => {
+        expect(letter).toMatch(/^[A-Z]$/);
+      });
+    });
   });
 });
