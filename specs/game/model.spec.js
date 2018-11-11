@@ -48,5 +48,14 @@ describe('Game Model', () => {
 
       expect(model.nextRound).toBeDefined();
     });
+
+    it('increments the round number', () => {
+      const model = new Model(config);
+      const roundBefore = model.round;
+
+      model.nextRound();
+
+      expect(model.round).toBe(roundBefore + 1);
+    });
   });
 });

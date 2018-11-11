@@ -30,6 +30,7 @@ class Model {
 
   // Start the next round of the game
   nextRound() {
+    this.round++;
   }
 }
 
