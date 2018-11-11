@@ -29,6 +29,12 @@ describe('Game Model', () => {
       expect(model.round).toBe(0);
     });
 
+    it('initializes the current player to null', () => {
+      const model = new Model(config);
+
+      expect(model.currentPlayer).toBe(null);
+    });
+
     it('initializes the plays history', () => {
       const model = new Model(config);
 

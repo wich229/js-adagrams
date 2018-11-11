@@ -8,6 +8,7 @@ class Model {
 
     // Initialize game state
     this.round = 0;
+    this.currentPlayer = null;
 
     /* Plays history structure is:
         {
