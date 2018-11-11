@@ -40,4 +40,13 @@ describe('Game Model', () => {
       });
     });
   });
+
+
+  describe('.nextRound', () => {
+    it('is defined', () => {
+      const model = new Model(config);
+
+      expect(model.nextRound).toBeDefined();
+    });
+  });
 });

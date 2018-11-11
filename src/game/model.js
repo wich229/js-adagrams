@@ -27,6 +27,10 @@ class Model {
       return plays;
     }, {});
   }
+
+  // Start the next round of the game
+  nextRound() {
+  }
 }
 
 export default Model;
