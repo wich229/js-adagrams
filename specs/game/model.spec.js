@@ -35,6 +35,12 @@ describe('Game Model', () => {
       expect(model.currentPlayer).toBe(null);
     });
 
+    it('initializes the letter bank to null', () => {
+      const model = new Model(config);
+
+      expect(model.letterBank).toBe(null);
+    });
+
     it('initializes the plays history', () => {
       const model = new Model(config);
 
