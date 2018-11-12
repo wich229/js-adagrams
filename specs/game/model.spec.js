@@ -1,4 +1,5 @@
 import Model from 'game/model';
+import Adagrams from 'game/adagrams';
 
 describe('Game Model', () => {
   const config = {
@@ -103,6 +104,20 @@ describe('Game Model', () => {
       const model = getModel();
 
       expect(model.playWord).toBeDefined();
+    });
+
+    describe('for valid words', () => {
+      const getWord = (model) => {
+        return model.letterBank.slice(0, 5).join('');
+      };
+
+      it('it returns the word score', () => {
+        const model = getModel();
+        const word = getWord(model);
+        const score = Adagrams.scoreWord(word);
+
+        expect(model.playWord(word)).toBe(score);
+      });
     });
   });
 });

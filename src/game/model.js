@@ -42,6 +42,7 @@ class Model {
   }
 
   playWord(word) {
+    return Adagrams.scoreWord(word);
   }
 }
 
