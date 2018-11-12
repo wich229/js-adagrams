@@ -42,7 +42,14 @@ class Model {
   }
 
   playWord(word) {
+    if(!this._valid(word)) return null;
+
     return Adagrams.scoreWord(word);
+  }
+
+  _valid(word, letterBank = this.letterBank) {
+    if(word.length < 1) return false;
+    return Adagrams.usesAvailableLetters(word, letterBank);
   }
 }
 

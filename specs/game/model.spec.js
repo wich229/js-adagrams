@@ -119,5 +119,23 @@ describe('Game Model', () => {
         expect(model.playWord(word)).toBe(score);
       });
     });
+
+    describe('for invalid words', () => {
+      const getWord = (model) => {
+        const letter = model.letterBank[0];
+        return letter.repeat(model.letterBank.filter((l) => {
+          return l === letter;
+        }).length + 1);
+      };
+
+      it('it returns null', () => {
+        const model = getModel();
+        const word = getWord(model);
+
+        expect(model.playWord(word)).toBe(null);
+        expect(model.playWord('123')).toBe(null);
+        expect(model.playWord('')).toBe(null);
+      });
+    });
   });
 });
