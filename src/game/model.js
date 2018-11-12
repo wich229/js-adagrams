@@ -40,6 +40,9 @@ class Model {
     // Draw the letter bank
     this.letterBank = Adagrams.drawLetters();
   }
+
+  playWord(word) {
+  }
 }
 
 export default Model;
