@@ -100,6 +100,19 @@ describe('Game Model', () => {
       expect(model.currentPlayer).toBe(0);
     });
 
+    it('initializes the round play history for first player', () => {
+      const model = new Model(config);
+
+      model.nextRound();
+
+      config.players.forEach((player) => {
+        const roundPlays = model.plays[player][model.round - 1];
+
+        expect(roundPlays).toBeInstanceOf(Array);
+        expect(roundPlays).toHaveLength(0);
+      });
+    });
+
     it('draws a new hand of letters', () => {
       const model = new Model(config);
 

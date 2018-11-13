@@ -45,6 +45,11 @@ class Model {
 
     // Draw the letter bank
     this.letterBank = Adagrams.drawLetters();
+
+    // Initialize player history for this round
+    this.config.players.forEach((player) => {
+      this.plays[player][this.round - 1] = [];
+    });
   }
 
   playWord(word) {
