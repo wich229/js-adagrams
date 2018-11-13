@@ -173,6 +173,36 @@ describe('Game Model', () => {
         const roundOverState = model.nextTurn();
         expect(roundOverState.roundOver).toBe(true);
       });
+
+      it('winner', () => {
+        const model = getModel();
+
+        const roundState = model.nextTurn();
+
+        // winner should be null if round is not over
+        expect(roundState.roundOver).toBe(false);
+        expect(roundState.winner).toBe(null);
+
+        // Advance to the final turn
+        config.players.slice(2).forEach(() => {
+          model.nextTurn();
+        });
+
+        // Play a word as the last player
+        const word = model.letterBank.slice(0, 5).join('');
+        const score = model.playWord(word);
+
+        // Complete the final turn, round is over and winner should be set
+        const roundOverState = model.nextTurn();
+        expect(roundOverState.roundOver).toBe(true);
+
+        expect(roundOverState.winner).toBeInstanceOf(Object);
+        expect(roundOverState.winner).toMatchObject({
+          word,
+          score,
+          player: config.players[config.players.length - 1],
+        });
+      });
     });
   });
 

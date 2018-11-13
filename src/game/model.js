@@ -55,9 +55,10 @@ class Model {
   nextTurn() {
     this.currentPlayer++;
 
-    return {
-      roundOver: (this.currentPlayer >= this.config.players.length),
-    };
+    const roundOver = this.currentPlayer >= this.config.players.length;
+    const winner = !roundOver ? null : this._roundWinner(this.round);
+
+    return { roundOver, winner };
   }
 
   playWord(word) {
@@ -79,6 +80,28 @@ class Model {
 
   _recordPlay(word, player = this.currentPlayer, round = this.round) {
     this.plays[this._playerName(player)][round - 1].push(word);
+  }
+
+  _bestPlay(round, player) {
+    const plays = this.plays[player][round - 1];
+    if(plays.length < 1) {
+      return null;
+    }
+
+    return Adagrams.highestScoreFrom(plays);
+  }
+
+  _roundWinner(round) {
+    const bestPlays = this.config.players
+                        .map((player) => ({ player, ...this._bestPlay(round, player) }))
+                        .filter(({ player, word, score }) => word !== undefined);
+
+    if(bestPlays.length < 1) {
+      return { player: '<NOBODY>', word: '<NONE>', score: 0 };
+    }
+
+    const { word: winningWord } = Adagrams.highestScoreFrom(bestPlays.map(({ word }) => word));
+    return bestPlays.find(({ word }) => word === winningWord);
   }
 }
 
