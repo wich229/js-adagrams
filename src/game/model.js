@@ -32,6 +32,12 @@ class Model {
     }, {});
   }
 
+  currentPlayerName() {
+    if(this.currentPlayer === null) return null;
+
+    return this._playerName(this.currentPlayer);
+  }
+
   // Start the next round of the game
   nextRound() {
     this.round++;
@@ -50,6 +56,10 @@ class Model {
   _valid(word, letterBank = this.letterBank) {
     if(word.length < 1) return false;
     return Adagrams.usesAvailableLetters(word, letterBank);
+  }
+
+  _playerName(player) {
+    return this.config.players[player];
   }
 }
 

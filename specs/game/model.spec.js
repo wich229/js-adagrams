@@ -54,6 +54,27 @@ describe('Game Model', () => {
     });
   });
 
+  describe('.currentPlayerName()', () => {
+    it('is defined', () => {
+      const model = new Model(config);
+
+      expect(model.currentPlayerName).toBeDefined();
+    });
+
+    it('returns the name of the current player when game is on-going', () => {
+      const model = new Model(config);
+
+      model.nextRound();
+
+      expect(model.currentPlayerName()).toEqual(model.config.players[0]);
+    });
+
+    it('returns null when the game is not on-going', () => {
+      const model = new Model(config);
+
+      expect(model.currentPlayerName()).toBe(null);
+    });
+  });
 
   describe('.nextRound', () => {
     it('is defined', () => {
