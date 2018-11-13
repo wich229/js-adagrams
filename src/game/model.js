@@ -54,6 +54,10 @@ class Model {
 
   nextTurn() {
     this.currentPlayer++;
+
+    return {
+      roundOver: (this.currentPlayer >= this.config.players.length),
+    };
   }
 
   playWord(word) {

@@ -150,6 +150,30 @@ describe('Game Model', () => {
       model.nextTurn();
       expect(model.currentPlayer).toBe(origPlayer + 2);
     });
+
+    describe('returns round state', () => {
+      it('roundOver', () => {
+        const model = getModel();
+
+        const roundState = model.nextTurn();
+
+        // Expect that we have at least two players, or round is over immediately
+        expect(config.players.length).toBeGreaterThan(1);
+
+        expect(roundState).toBeInstanceOf(Object);
+        expect(roundState).toHaveProperty('roundOver');
+        expect(roundState.roundOver).toBe(false);
+
+        // Advance to the final turn
+        config.players.slice(2).forEach(() => {
+          model.nextTurn();
+        });
+
+        // Complete the final turn, round should be over
+        const roundOverState = model.nextTurn();
+        expect(roundOverState.roundOver).toBe(true);
+      });
+    });
   });
 
   describe('.playWord', () => {
