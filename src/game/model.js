@@ -52,6 +52,9 @@ class Model {
     });
   }
 
+  nextTurn() {
+  }
+
   playWord(word) {
     if(!this._valid(word)) return null;
 

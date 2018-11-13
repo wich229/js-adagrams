@@ -126,6 +126,21 @@ describe('Game Model', () => {
     });
   });
 
+  describe('.nextTurn', () => {
+    const getModel = () => {
+      const model = new Model(config);
+      model.nextRound();
+
+      return model;
+    };
+
+    it('is defined', () => {
+      const model = getModel();
+
+      expect(model.nextTurn).toBeDefined();
+    });
+  });
+
   describe('.playWord', () => {
     const getModel = () => {
       const model = new Model(config);
