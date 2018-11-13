@@ -139,6 +139,17 @@ describe('Game Model', () => {
 
       expect(model.nextTurn).toBeDefined();
     });
+
+    it('increments the current player index', () => {
+      const model = getModel();
+      const origPlayer = model.currentPlayer;
+
+      model.nextTurn();
+      expect(model.currentPlayer).toBe(origPlayer + 1);
+
+      model.nextTurn();
+      expect(model.currentPlayer).toBe(origPlayer + 2);
+    });
   });
 
   describe('.playWord', () => {

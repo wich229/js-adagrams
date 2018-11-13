@@ -53,6 +53,7 @@ class Model {
   }
 
   nextTurn() {
+    this.currentPlayer++;
   }
 
   playWord(word) {
