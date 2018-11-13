@@ -55,6 +55,8 @@ class Model {
   playWord(word) {
     if(!this._valid(word)) return null;
 
+    this._recordPlay(word);
+
     return Adagrams.scoreWord(word);
   }
 
@@ -65,6 +67,10 @@ class Model {
 
   _playerName(player) {
     return this.config.players[player];
+  }
+
+  _recordPlay(word, player = this.currentPlayer, round = this.round) {
+    this.plays[this._playerName(player)][round - 1].push(word);
   }
 }
 

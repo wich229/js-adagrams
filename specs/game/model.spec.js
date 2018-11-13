@@ -134,6 +134,10 @@ describe('Game Model', () => {
       return model;
     };
 
+    const getPlays = (model, player, round) => {
+      return [...(model.plays[player][round - 1] || [])];
+    };
+
     it('is defined', () => {
       const model = getModel();
 
@@ -152,6 +156,20 @@ describe('Game Model', () => {
 
         expect(model.playWord(word)).toBe(score);
       });
+
+      it('adds word to plays history for current player', () => {
+        const model = getModel();
+        const player = model.currentPlayerName();
+        const origPlays = getPlays(model, player, model.round);
+
+        const word1 = getWord(model);
+        model.playWord(word1);
+        expect(getPlays(model, player, model.round)).toEqual([...origPlays, word1]);
+
+        const word2 = getWord(model);
+        model.playWord(word2);
+        expect(getPlays(model, player, model.round)).toEqual([...origPlays, word1, word2]);
+      });
     });
 
     describe('for invalid words', () => {
@@ -169,6 +187,16 @@ describe('Game Model', () => {
         expect(model.playWord(word)).toBe(null);
         expect(model.playWord('123')).toBe(null);
         expect(model.playWord('')).toBe(null);
+      });
+
+      it('does not add word to history', () => {
+        const model = getModel();
+        const word = getWord(model);
+        const origPlays = {...model.plays};
+
+        model.playWord(word);
+
+        expect(model.plays).toEqual(origPlays);
       });
     });
   });
