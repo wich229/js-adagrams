@@ -22,7 +22,7 @@ $ npm install
 Similar to `bundle install` in Ruby projects, this makes the npm package manager download and install any dependencies for the project (such as Jest).
 
 ### Tests
-We have provided unit tests for you to run. A complete project will pass all provided tests.
+We have provided unit tests for you to run. A complete project will pass all provided tests in the `specs/adagrams.spec.js` file. The other specs are for game logic that is already implemented and they may pass or fail depending upon the state of your code, however you should focus on just the tests in `specs/adagrams.spec.js`.
 
 To run the tests, in the command line, navigate to the project root and then run:
 
