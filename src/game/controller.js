@@ -18,6 +18,9 @@ class Controller {
     this.game = new this.model({
       players, rounds, time
     });
+
+    // Advance to the first round
+    this.game.nextRound();
   }
 
   exit() {
