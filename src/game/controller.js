@@ -14,7 +14,10 @@ class Controller {
   }
 
   play(players, rounds = 3, time = 60) {
-    this.view.play();
+    // Create a new game instance
+    this.game = new this.model({
+      players, rounds, time
+    });
   }
 
   exit() {
