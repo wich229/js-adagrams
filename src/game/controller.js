@@ -20,14 +20,33 @@ class Controller {
     });
 
     // Advance to the first round
-    this.game.nextRound();
-    this.startTurn();
+    this.advanceRound();
+  }
+
+  advanceRound() {
+    const gameState = this.game.nextRound();
+    if(gameState.gameOver) {
+      this.view.gameOver(gameState);
+    } else {
+      this.startTurn();
+    }
   }
 
   startTurn() {
     this.view.playerTurn(this.game, {
       playWord: this.game.playWord.bind(this.game),
+      endTurn: this.endTurn.bind(this),
     });
+  }
+
+  endTurn() {
+    // Advance to next player
+    const roundState = this.game.nextTurn();
+    const callback = (roundState.roundOver
+                       ? this.advanceRound
+                       : this.startTurn).bind(this);
+
+    return { roundState, callback };
   }
 
   exit() {

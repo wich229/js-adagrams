@@ -35,6 +35,24 @@ const View = {
       });
 
     game.exec('playerTurn');
+
+    // Player's turn is over when the mode exits
+    game.on('mode_exit', () => {
+      const {roundState, callback} = callbacks.endTurn();
+      if(roundState.roundOver) {
+        menu.log(MESSAGES.roundOver(roundState.winner));
+        game.hide();
+      }
+
+      // In order to let this turn finish and the Vorpal object to get GC'd
+      // we should enqueue the callback rather than run it now
+      setTimeout(callback, 0);
+    });
+  },
+
+  gameOver(gameState) {
+    menu.log(MESSAGES.gameOver(gameState.winner));
+    menu.show();
   },
 
   exit() {
