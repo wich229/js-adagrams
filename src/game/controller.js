@@ -19,6 +19,8 @@ class Controller {
       players, rounds, time
     });
 
+    this.view.newGame(this.game);
+
     // Advance to the first round
     this.advanceRound();
   }
@@ -28,6 +30,7 @@ class Controller {
     if(gameState.gameOver) {
       this.view.gameOver(gameState);
     } else {
+      this.view.newRound(this.game);
       this.startTurn();
     }
   }

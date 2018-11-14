@@ -10,13 +10,20 @@ const View = {
     menu.show();
   },
 
+  newGame(model) {
+    menu.log(MESSAGES.newGame);
+  },
+
+  newRound(model) {
+    menu.log(MESSAGES.newRound(model.round, model.config.rounds));
+  },
+
   playerTurn(model, callbacks) {
     const game = new Vorpal();
     game
       .delimiter('')
       .show();
 
-    game.log(MESSAGES.play);
     game.log(model.letterBank.join(' '));
 
     game
