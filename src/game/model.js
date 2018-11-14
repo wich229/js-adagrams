@@ -69,6 +69,8 @@ class Model {
   }
 
   playWord(word) {
+    word = word.toUpperCase();
+
     if(!this._valid(word)) return null;
 
     this._recordPlay(word);

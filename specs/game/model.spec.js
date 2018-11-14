@@ -297,6 +297,14 @@ describe('Game Model', () => {
         model.playWord(word2);
         expect(getPlays(model, player, model.round)).toEqual([...origPlays, word1, word2]);
       });
+
+      it('validates word case-insensitively', () => {
+        const model = getModel();
+        const word = getWord(model);
+        const score = Adagrams.scoreWord(word);
+
+        expect(model.playWord(word.toLowerCase())).toBe(score);
+      });
     });
 
     describe('for invalid words', () => {
