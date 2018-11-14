@@ -43,6 +43,11 @@ class Model {
     this.round++;
     this.currentPlayer = 0;
 
+    const gameOver = this.round > this.config.rounds;
+    if(gameOver) {
+      return { gameOver, winner: this._gameWinner() };
+    }
+
     // Draw the letter bank
     this.letterBank = Adagrams.drawLetters();
 
@@ -50,6 +55,8 @@ class Model {
     this.config.players.forEach((player) => {
       this.plays[player][this.round - 1] = [];
     });
+
+    return { gameOver, winner: null };
   }
 
   nextTurn() {
@@ -102,6 +109,29 @@ class Model {
 
     const { word: winningWord } = Adagrams.highestScoreFrom(bestPlays.map(({ word }) => word));
     return bestPlays.find(({ word }) => word === winningWord);
+  }
+
+  _gameWinner() {
+    // Add up the scores for each player, counting only the rounds where they won
+    const roundWinners = [];
+    for(let round = 1; round <= this.config.rounds; round++) {
+      const winner = this._roundWinner(round);
+      const existing = roundWinners.find(({ player }) => player === winner.player);
+
+      if(existing) {
+        existing.score += winner.score;
+      } else {
+        roundWinners.push(winner);
+      }
+    }
+
+    return roundWinners.reduce((gameWinner, roundWinner) => {
+      if(roundWinner.score > gameWinner.score) {
+        gameWinner = roundWinner;
+      }
+
+      return gameWinner;
+    }, { player: '<NOBODY>', score: 0 });
   }
 }
 

@@ -124,6 +124,53 @@ describe('Game Model', () => {
         expect(letter).toMatch(/^[A-Z]$/);
       });
     });
+
+    describe('returns game state', () => {
+      it('gameOver', () => {
+        const model = new Model({ ...config, rounds: 1 });
+
+        const gameState = model.nextRound();
+
+        expect(gameState).toBeInstanceOf(Object);
+        expect(gameState.gameOver).toBe(false);
+
+        const gameOverState = model.nextRound();
+        expect(gameOverState.gameOver).toBe(true);
+      });
+
+      it('winner', () => {
+        const model = new Model({ ...config, rounds : 2 });
+
+        // Start game, no one has won yet
+        let gameState = model.nextRound();
+        expect(gameState.winner).toBe(null);
+
+        // First player plays a word
+        let p1Score = 0;
+        let word = model.letterBank.slice(0, 5).join('');
+        p1Score += model.playWord(word);
+
+        // Second player does not play
+        model.nextTurn();
+        gameState = model.nextRound();
+        // Game is not over, so no winner yet
+        expect(gameState.winner).toBe(null);
+
+        // First player plays another word
+        word = model.letterBank.slice(0, 5).join('');
+        p1Score += model.playWord(word);
+
+        // Second player does not play again
+        model.nextTurn();
+        gameState = model.nextRound();
+
+        // Game is over now, first player has won
+        expect(gameState.winner).toMatchObject({
+          player: config.players[0],
+          score: p1Score,
+        });
+      });
+    });
   });
 
   describe('.nextTurn', () => {
