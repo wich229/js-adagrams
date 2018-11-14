@@ -10,8 +10,31 @@ const View = {
     menu.show();
   },
 
-  play() {
-    menu.log(MESSAGES.play);
+  playerTurn(model, callbacks) {
+    const game = new Vorpal();
+    game
+      .delimiter('')
+      .show();
+
+    game.log(MESSAGES.play);
+    game.log(model.letterBank.join(' '));
+
+    game
+      .mode('playerTurn')
+      .delimiter(`Now playing: ${model.currentPlayerName()}>`)
+      .action((word, done) => {
+        const result = callbacks.playWord(word);
+
+        if(Number.isInteger(result)) {
+          game.log(MESSAGES.playWordSuccess(word, result));
+        } else {
+          game.log(MESSAGES.playWordFailure(word));
+        }
+
+        done();
+      });
+
+    game.exec('playerTurn');
   },
 
   exit() {

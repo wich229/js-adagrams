@@ -21,6 +21,13 @@ class Controller {
 
     // Advance to the first round
     this.game.nextRound();
+    this.startTurn();
+  }
+
+  startTurn() {
+    this.view.playerTurn(this.game, {
+      playWord: this.game.playWord.bind(this.game),
+    });
   }
 
   exit() {
