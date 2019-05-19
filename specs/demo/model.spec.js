@@ -1,5 +1,5 @@
-import Model from 'game/model';
-import Adagrams from 'game/adagrams';
+import Model from 'demo/model';
+import Adagrams from 'demo/adagrams';
 
 describe('Game Model', () => {
   const config = {
