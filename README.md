@@ -186,5 +186,11 @@ Add a function named `highestScoreFrom` in the `Adagrams` object in `src/adagram
     - ...unless one word has 10 letters. If the top score is tied between multiple words and one is 10 letters long, choose the one with 10 letters over the one with fewer tiles
     - If the there are multiple words that are the same score and the same length, pick the first one in the supplied list
 
+### Optional: Wave 5
+Change the `Adagrams` object into a class named `Adagrams`!
+
+- Ensure that the tests still pass
+- Remember, methods in classes are not comma-separated!
+
 ## What Instructors Are Looking For
 Check out the [feedback template](feedback.md) which lists the items instructors will be looking for as they evaluate your project.
