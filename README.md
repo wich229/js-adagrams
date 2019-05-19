@@ -92,7 +92,7 @@ const Adagrams = {
 };
 ```
 
-The `Adagrams` object is used here as the equivalent of a Ruby module.
+The `Adagrams` object is used here as to contain several attributes and functions listed in the Implementation Requirements section.
 
 We've previously seen JavaScript objects used as hashes, and seen them act sort of like class instances with `this`, and now modules. Because of the language's design JavaScript's object type is flexible enough to unify all three of these concepts which are each distinct in Ruby.
 
@@ -105,7 +105,7 @@ This line is necessary to allow our unit test file (`specs/adagrams.spec.js`) to
 
 ## Implementation Requirements
 ### Wave 1
-Our first job is to build a hand of 10 letters. To do so, add a function called `Adagrams.drawLetters` in `src/adagrams.js`. This method should have the following properties:
+Our first job is to build a hand of 10 letters. To do so, add a function called `drawLetters` inside of the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
 
 - No parameters
 - Returns an array of ten strings
@@ -135,13 +135,13 @@ Our first job is to build a hand of 10 letters. To do so, add a function called 
 | L : 4  | Y : 2 |
 | M : 2  | Z : 1 |
 
-**Note:** Making sure that the drawn letters match the rules of the letter pool can be straightforward or very difficult, depending on how you build the data structure for the letter pool. It is worth spending some time with your partner to think carefully about this.
+**Note:** Making sure that the drawn letters match the rules of the letter pool can be straightforward or very difficult, depending on how you build the data structure for the letter pool. It is worth spending some time to think carefully about this.
 
 
 ### Wave 2
 Next, we need a way to check if an input word (a word a player submits) only uses characters that are contained within a collection (or hand) of drawn letters. Essentially, we need a way to check if the word is, indeed, an anagram of some or all of the given letters in the hand.
 
-To do so, add a function called `Adagrams.usesAvailableLetters` in `src/adagrams.js`. This method should have the following properties:
+To do so, add a function called `usesAvailableLetters` inside of the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
 
 - Has two parameters:
    - `input`, the first parameter, describes some input word, and is a string
@@ -153,7 +153,7 @@ To do so, add a function called `Adagrams.usesAvailableLetters` in `src/adagrams
 ### Wave 3
 We want a function that returns the score of a given word as defined by the Adagrams game.
 
-Name this function `scoreWord` in `src/adagrams.js`. This method should have the following properties:
+Make a function named `scoreWord` in the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
 
 - Has one parameter: `word`, which is a string of characters
 - Returns an integer representing the number of points
@@ -175,7 +175,7 @@ Name this function `scoreWord` in `src/adagrams.js`. This method should have the
 ### Wave 4
 After several hands have been drawn, words have been submitted, checked, scored, and played, we want a way to find the highest scoring word. This function looks at the array of `words` and calculates which of these words has the highest score, applies any tie-breaking logic, and returns the winning word in a special data structure.
 
-Add a function called `highestScoreFrom` in `src/adagrams.js`. This method should have the following properties:
+Add a function named `highestScoreFrom` in the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
 
 - Has one parameter: `words`, which is an array of strings
 - Returns a single hash that represents the data of a winning word and its score. The hash should have the following keys:
