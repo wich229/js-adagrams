@@ -1,6 +1,14 @@
 # JS Adagrams
 ## What We're Looking For
 
+<!--
+
+Comprehension questions: They are all subjective!
+
+Notes for grading: Optional Wave 5 asks students to convert the syntax to a class, so you will see differences in code structure between submissions.
+
+ -->
+
 Feature | Feedback
 --- | ---
 **General** |

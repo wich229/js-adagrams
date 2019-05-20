@@ -1,4 +1,4 @@
-import Adagrams from 'game/adagrams';
+import Adagrams from 'demo/adagrams';
 
 class Model {
   constructor(config) {
