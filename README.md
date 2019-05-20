@@ -92,7 +92,7 @@ const Adagrams = {
 };
 ```
 
-The `Adagrams` object is used here as to contain several attributes and functions listed in the Implementation Requirements section.
+The `Adagrams` object is used here to contain several attributes and functions listed in the Implementation Requirements section.
 
 We've previously seen JavaScript objects used as hashes, and seen them act sort of like class instances with `this`, and now modules. Because of the language's design JavaScript's object type is flexible enough to unify all three of these concepts which are each distinct in Ruby.
 
