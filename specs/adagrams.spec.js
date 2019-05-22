@@ -101,7 +101,7 @@ describe('Adagrams', () => {
 
     describe('in case of tied score', () => {
       const expectTie = (words) => {
-        const scores = words.map(Adagrams.scoreWord);
+        const scores = words.map(word => Adagrams.scoreWord(word));
         const highScore = scores.reduce((h, s) => h < s ? s : h, 0);
         const tiedWords = scores.filter((s) => s == highScore);
 
