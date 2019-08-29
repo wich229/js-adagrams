@@ -22,7 +22,7 @@ $ npm install
 Similar to `bundle install` in Ruby projects, this makes the npm package manager download and install any dependencies for the project (such as Jest).
 
 ### Tests
-We have provided unit tests for you to run. A complete project will pass all provided tests in the `specs/adagrams.spec.js` file. The other specs are for game logic that is already implemented and they may pass or fail depending upon the state of your code, however you should focus on just the tests in `specs/adagrams.spec.js`.
+We have provided unit tests for you to run. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is already implemented and they may pass or fail depending upon the state of your code, however you should focus on just the tests in `test/adagrams.test.js`.
 
 To run the tests, in the command line, navigate to the project root and then run:
 
@@ -74,7 +74,7 @@ This repository has a baseline structure for the project which includes several 
 File | Description
 --- | ---
 src/adagrams.js | This is the project code, your implementation should be written here as functions within the `Adagrams` object.
-specs/adagrams.spec.js | This file contains the unit tests for all functions you must implement.
+test/adagrams.test.js | This file contains the unit tests for all functions you must implement.
 package.json | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `Gemfile` in our Ruby projects.
 package-lock.json | This is equivalent to the `Gemfile.lock` file in our Ruby projects.
 jest.config.js | This is a configuration file for the Jest testing framework.
@@ -101,7 +101,7 @@ The code ends with this line:
 export default Adagrams;
 ```
 
-This line is necessary to allow our unit test file (`specs/adagrams.spec.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Ruby, with JavaScript if we want to allow other files to access a piece of code we've written we must explicity [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
+This line is necessary to allow our unit test file (`test/adagrams.test.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Ruby, with JavaScript if we want to allow other files to access a piece of code we've written we must explicity [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
 
 ## Implementation Requirements
 ### Wave 1
