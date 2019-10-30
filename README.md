@@ -27,7 +27,7 @@ We have provided unit tests for you to run. A complete project will pass all pro
 To run the tests, in the command line, navigate to the project root and then run:
 
 ```bash
-$ npm test
+$ npm test test/adagrams.test.js
 ```
 
 After your tests have run there is a short table outputting the coverage summary for each file. You can view complete coverage details by running:
