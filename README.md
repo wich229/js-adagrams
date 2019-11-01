@@ -172,8 +172,10 @@ Make a function named `scoreWord` in the `Adagrams` object in `src/adagrams.js`.
 |J, X                          |   8  |
 |Q, Z                          |   10 |
 
-### Wave 4
+### Optional: Wave 4
 After several hands have been drawn, words have been submitted, checked, scored, and played, we want a way to find the highest scoring word. This function looks at the array of `words` and calculates which of these words has the highest score, applies any tie-breaking logic, and returns the winning word in a special data structure.
+
+#### Objective
 
 Add a function named `highestScoreFrom` in the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
 
@@ -185,6 +187,17 @@ Add a function named `highestScoreFrom` in the `Adagrams` object in `src/adagram
     - prefer the word with the fewest letters...
     - ...unless one word has 10 letters. If the top score is tied between multiple words and one is 10 letters long, choose the one with 10 letters over the one with fewer tiles
     - If the there are multiple words that are the same score and the same length, pick the first one in the supplied list
+
+
+#### Process
+
+This Optional Wave has 3 parts:
+
+1. Adjust the syntax for the tests for `highestScoreFrom` to run, instead of skip. To do this, find the `describe` block for the tests of `highestScoreFrom`, and change the syntax from `describe.skip` to `describe`
+2. Write the pseudocode for this function, using whatever resources and references
+3. Translate the pseudocode into JavaScript, using whatever resources and references
+
+You are encouraged the leave the pseudocode as comments for this wave if you begin this wave and don't finish it. The goal for this optional wave is to practice translating logic to new JavaScript syntax.
 
 ### Optional: Wave 5
 Change the `Adagrams` object into a class named `Adagrams`!
