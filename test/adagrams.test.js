@@ -54,17 +54,17 @@ describe('Adagrams', () => {
 
     it('returns an accurate numerical score according to the score chart', () => {
       expectScores({
-        'A': 1,
-        'DOG': 5,
-        'WHIMSY': 17
+        A: 1,
+        DOG: 5,
+        WHIMSY: 17
       });
     });
 
     it('returns a score regardless of the input case', () => {
       expectScores({
-        'a': 1,
-        'dog': 5,
-        'wHiMsY': 17
+        a: 1,
+        dog: 5,
+        wHiMsY: 17
       });
     });
 
@@ -76,10 +76,10 @@ describe('Adagrams', () => {
 
     it('adds an extra 8 points if word is 7 or more characters long', () => {
       expectScores({
-        'XXXXXXX': 64,
-        'XXXXXXXX': 72,
-        'XXXXXXXXX': 80,
-        'XXXXXXXXXX': 88,
+        XXXXXXX: 64,
+        XXXXXXXX: 72,
+        XXXXXXXXX: 80,
+        XXXXXXXXXX: 88,
       });
     });
   });
