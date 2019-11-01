@@ -23,6 +23,7 @@ All tests for `usesAvailableLetters` pass |
 `scoreWord` method |
 Uses appropriate data structure to store the letter scores |
 All tests for `scoreWord` pass |
+**Optional** |
 `highestScoreFrom` method |
 Appropriately handles edge cases for tie-breaking logic |
 All tests for `highestScoreFrom` pass |
