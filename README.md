@@ -172,7 +172,7 @@ Make a function named `scoreWord` in the `Adagrams` object in `src/adagrams.js`.
 |J, X                          |   8  |
 |Q, Z                          |   10 |
 
-### Optional: Wave 4
+### Wave 4
 After several hands have been drawn, words have been submitted, checked, scored, and played, we want a way to find the highest scoring word. This function looks at the array of `words` and calculates which of these words has the highest score, applies any tie-breaking logic, and returns the winning word in a special data structure.
 
 #### Objective
