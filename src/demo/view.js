@@ -1,4 +1,4 @@
-import Vorpal from 'vorpal';
+import Vorpal from '@moleculer/vorpal';
 import MESSAGES from 'demo/messages.js';
 
 const menu = new Vorpal();
