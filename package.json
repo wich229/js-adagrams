@@ -31,7 +31,7 @@
     "regenerator-runtime": "^0.12.1"
   },
   "dependencies": {
-    "core-js": "^2.6.6",
+    "core-js": "^2.6.11",
     "vorpal": "^1.12.0"
   }
 }
