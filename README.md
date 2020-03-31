@@ -21,6 +21,18 @@ $ npm install
 
 Similar to `bundle install` in Ruby projects, this makes the npm package manager download and install any dependencies for the project (such as Jest).
 
+### When I `npm install`, I Get a Lot of Text: What do I do?!
+
+Managing external dependencies (packages/libraries that we use) in JavaScript projects is different than managing them in Ruby. In JavaScript, we use `npm` to manage dependencies, and those dependencies have other dependencies. Our dependencies may change over time, and those dependency's dependencies change, too! It's a lot.
+
+When we run `npm install`, `npm` may give us a lot of feedback about the state of our dependencies.
+
+If we get **warnings about vulnerabilities,** it's likely that we won't worry about them, even if they're high risk or even if they're many (thousands?!).
+
+If we get a message about `gyp: No Xcode or CLT version`, we also won't worry about it. That error is because of changing operating systems. [You are free to do some independent research to fix this if you're excited, though!](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d).
+
+**The important thing is if we're able to run the tests.** After running `npm install`, follow the directions in the next section to run the tests. If your tests run and fail, then that's a great place to be! If your tests won't run, then you should seek help and assistance.
+
 ### Tests
 We have provided unit tests for you to run. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is already implemented and they may pass or fail depending upon the state of your code, however you should focus on just the tests in `test/adagrams.test.js`.
 
