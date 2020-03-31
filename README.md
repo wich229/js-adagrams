@@ -213,7 +213,7 @@ This Wave has 3 parts:
 
 You are encouraged the leave the pseudocode as comments for this wave if you begin this wave and don't finish it. The goal for this wave is to practice translating logic to new JavaScript syntax.
 
-If reviewers see your practice and thought process with pseudocode, they will review accordingly with respect to the practice and work put into the project overall, even if this wave isn't finished.
+Our primary goal here is to see your practice and thought process with pseudocode, and we will review accordingly with respect to the practice and work put into the project overall, even if this wave isn't finished.
 
 Please ensure that your tests still run before project submission, of course. :)
 
