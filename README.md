@@ -203,13 +203,19 @@ Add a function named `highestScoreFrom` in the `Adagrams` object in `src/adagram
 
 #### Process
 
-This Optional Wave has 3 parts:
+This Wave has 3 parts:
 
 1. Adjust the syntax for the tests for `highestScoreFrom` to run, instead of skip. To do this, find the `describe` block for the tests of `highestScoreFrom`, and change the syntax from `describe.skip` to `describe`
 2. Write the pseudocode for this function, using whatever resources and references
 3. Translate the pseudocode into JavaScript, using whatever resources and references
 
-You are encouraged the leave the pseudocode as comments for this wave if you begin this wave and don't finish it. The goal for this optional wave is to practice translating logic to new JavaScript syntax.
+#### What If I Don't Finish This Wave?
+
+You are encouraged the leave the pseudocode as comments for this wave if you begin this wave and don't finish it. The goal for this wave is to practice translating logic to new JavaScript syntax.
+
+Our primary goal here is to see your practice and thought process with pseudocode, and we will review accordingly with respect to the practice and work put into the project overall, even if this wave isn't finished. If you got stuck, please reflect on you process and where you got stuck in the reflection questions when you submit to project
+
+Please ensure that your tests still run before project submission, of course. :)
 
 ### Optional: Wave 5
 Change the `Adagrams` object into a class named `Adagrams`!
