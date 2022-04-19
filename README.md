@@ -1,13 +1,9 @@
 # JS Adagrams
-## At a Glance
-- Individual, [stage 1](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/classroom/rule-of-three.md#stage-1) project
-- Due before class, **DATE HERE**
-- Submit this project with a PR
 
 ## Introduction
-In this project you will build the same Adagrams project from the Ruby curriculum using JavaScript running on Node.js in your terminal. Please review [the original project](https://github.com/AdaGold/adagrams#readme) for an explanation of the Adagrams game design.
+In this project, we will build the same Adagrams project from the Python curriculum using JavaScript running on Node.js in the terminal. Please review [the original project](https://github.com/AdaGold/adagrams-py#readme) for an explanation of the Adagrams game design.
 
-A test suite and sample game project have been provided so that you can practice TDD and verify your implementation is correct. A completed project will pass all of the provided tests and have coverage of at least 90%.
+A test suite and sample game project is provided in order to practice TDD and verify the correct implementation. A complete project will pass all of the provided tests and have coverage of at least 90%.
 
 ## Learning Goals
 - Write JavaScript code using functions
@@ -20,7 +16,7 @@ After forking and cloning this repo you should `cd` to the project directory and
 $ npm install
 ```
 
-Similar to `bundle install` in Ruby projects, this makes the npm package manager download and install any dependencies for the project (such as Jest).
+Similar to using virtual environments in Python projects, this makes the npm package manager download and install any dependencies for the project (such as Jest).
 
 ### When I `npm install`, I Get a Lot of Text: What do I do?!
 
@@ -43,7 +39,7 @@ To run the tests, in the command line, navigate to the project root and then run
 $ npm test test/adagrams.test.js
 ```
 
-After your tests have run there is a short table outputting the coverage summary for each file. You can view complete coverage details by running:
+After the tests run, there is a short table that summarizes the coverage for each file. You can view complete coverage details by running:
 
 ```bash
 $ npm run coverage
@@ -53,7 +49,7 @@ This is shorthand for the command `open coverage/lcov-report/index.html` and wil
 
 ### Adagrams Demo Game
 
-In addition to the provided unit tests we have provided a demo game application which makes use of the Adagrams code that you will implement. You can play the game as you implement each wave of the project and verify that game functionality begins to work, in addition to passing unit tests. Don't forget; making the demo game work is optional-- **passing the unit tests is mandatory.**
+In addition to the provided unit tests, we provided a demo game application which makes use of the Adagrams code that you will implement. You can play the game as you implement each wave of the project and verify that game functionality begins to work, in addition to passing unit tests. Don't forget; making the demo game work is optional-- **passing the unit tests is required.**
 
 <details>
 
