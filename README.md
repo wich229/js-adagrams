@@ -90,7 +90,7 @@ File | Description
 src/adagrams.js | This is the project code, your implementation should be written here as functions within the `Adagrams` object.
 test/adagrams.test.js | This file contains the unit tests for all functions you must implement.
 package.json | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `requirements.txt` in our Python projects.
-package-lock.json | This is equivalent to the `Gemfile.lock` file in our Ruby projects.
+package-lock.json | [package-lock.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json) [captures the exact dependency tree stored at any point in time](https://blog.logrocket.com/why-you-should-use-package-lock-json/).
 jest.config.js | This is a configuration file for the Jest testing framework.
 babel.config.js | This is a configuration file for the [Babel](https://babeljs.io/) compiler. For a short summary of why we use it, [click here](https://github.com/AdaGold/backbone-baseline#major-components)
 
