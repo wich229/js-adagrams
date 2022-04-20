@@ -2,13 +2,13 @@
 
 ## Skills Assessed
 
-- Practice writing Javascript functions with using correct syntax, including:
+- Writing Javascript functions with using correct syntax, including:
   - only use `const` and `let` variables
   - use semi-colons where needed
   - name variables and functions with camelCase
-- Practice good git hygiene:
+- Practicing good git hygiene:
   - make at least 3 small commits with meaningful commit messages
-- Practice TDD with JavaScript and the Jest testing framework
+- Practicing TDD with JavaScript and the Jest testing framework
 
 ## Goal
 
