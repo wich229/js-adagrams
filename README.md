@@ -6,12 +6,12 @@ In this project, we will build the same Adagrams project from the Python curricu
 A test suite and sample game project is provided in order to practice TDD and verify the correct implementation. A complete project will pass all of the provided tests and have coverage of at least 90%.
 
 ## Learning Goals
-- Practice using correct JavaScript syntax using functions
+- Practice writing Javascript functions with using correct syntax, including:
   - only use `const` and `let` variables
-  - semi-colons where needed
-  - variables and functions named with camelCase
-- Practice good git hygiene
-  - at least 3 small commits and meaningful commit messages
+  - use semi-colons where needed
+  - name variables and functions with camelCase
+- Practice good git hygiene:
+  - make at least 3 small commits with meaningful commit messages
 - Practice TDD with JavaScript and the Jest testing framework
 
 ## Getting Started
