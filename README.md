@@ -2,12 +2,12 @@
 
 ## Skills Assessed
 
-- Writing Javascript functions with using correct syntax, including:
+- Writing Javascript functions with correct syntax, including:
   - only use `const` and `let` variables
   - use semi-colons where needed
   - name variables and functions with camelCase
 - Practicing good git hygiene:
-  - make at least 3 small commits with meaningful commit messages
+  - make at least three small commits with meaningful commit messages
 - Practicing TDD with JavaScript and the Jest testing framework
 
 ## Goal
@@ -36,11 +36,11 @@ If we get **warnings about vulnerabilities,** it's likely that we won't worry ab
 
 If we get a message about `gyp: No Xcode or CLT version`, we also won't worry about it. That error is because of changing operating systems. [You are free to do some independent research to fix this if you're excited, though!](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d).
 
-**The important thing is if we're able to run the tests.** After running `npm install`, follow the directions in the next section to run the tests. If your tests run and fail, then that's a great place to be! If your tests won't run, then you should seek help and assistance.
+**The important thing is if we are able to run the tests.** After running `npm install`, follow the directions in the next section to run the tests. If your tests run and fail, then that's a great place to be! If your tests won't run, then you should seek help.
 
 ### Tests
 
-We have provided unit tests for you to run. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is already implemented and they may pass or fail depending upon the state of your code, however you should focus on just the tests in `test/adagrams.test.js`.
+We have provided unit tests for you to run. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is provided and they may pass or fail depending upon the state of your code. However, you should focus on just the tests in `test/adagrams.test.js`.
 
 To run the tests, in the command line, navigate to the project root and then run:
 
@@ -58,7 +58,7 @@ This is shorthand for the command `open coverage/lcov-report/index.html` and wil
 
 ### Adagrams Demo Game
 
-In addition to the provided unit tests, we provided a demo game application which makes use of the Adagrams code that you will implement. You can play the game as you implement each wave of the project and verify that game functionality begins to work, in addition to passing unit tests. Don't forget; making the demo game work is optional-- **passing the unit tests is required.**
+In addition to the provided unit tests, we provided a demo game application that uses Adagrams code that you will implement. You can play the game as you implement each wave of the project and verify that game functionality begins to work, in addition to passing unit tests. Don't forget; making the demo game work is optional-- **passing the unit tests is required.**
 
 <details>
 
@@ -82,13 +82,13 @@ The game is fairly rudimentary and has a few bugs remaining, such as needing to 
 
 #### Conclusion
 
-Just like our Python Adagrams project, we will only build the library code that captured all of the rules. We can use this demo game code to imagine how another program may hook into our codebase for logic.
+Just like our Python Adagrams project, we will only build the library code that captures all of the rules. We can use this demo game code to imagine how another program may hook into our codebase for logic.
 
 </details>
 
 ### Project Structure
 
-This repository has a baseline structure for the project which includes several files. You will only need to modify one of them:
+This repository has a baseline structure for the project that includes several files. You will only need to modify one of them:
 
 | File                  | Description                                                                                                                                                                                                              |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -123,7 +123,7 @@ The code ends with this line:
 export default Adagrams;
 ```
 
-This line is necessary to allow our unit test file (`test/adagrams.test.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Python, with JavaScript if we want to allow other files to access a piece of code we've written we must explicity [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
+This line is necessary to allow our unit test file (`test/adagrams.test.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Python, with JavaScript if we want to allow other files to access a piece of code we have written we must explicitly [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
 
 ## Implementation Requirements
 
@@ -238,7 +238,3 @@ Change the `Adagrams` object into a class named `Adagrams`!
 
 - Ensure that the tests still pass
 - Remember, methods in classes are not comma-separated!
-
-## What Instructors Are Looking For
-
-Check out the [feedback template](feedback.md) which lists the items instructors will be looking for as they evaluate your project.
