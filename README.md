@@ -6,7 +6,12 @@ In this project, we will build the same Adagrams project from the Python curricu
 A test suite and sample game project is provided in order to practice TDD and verify the correct implementation. A complete project will pass all of the provided tests and have coverage of at least 90%.
 
 ## Learning Goals
-- Write JavaScript code using functions
+- Practice using correct JavaScript syntax using functions
+  - only use `const` and `let` variables
+  - semi-colons where needed
+  - variables and functions named with camelCase
+- Practice good git hygiene
+  - at least 3 small commits and meaningful commit messages
 - Practice TDD with JavaScript and the Jest testing framework
 
 ## Getting Started
@@ -20,7 +25,7 @@ Similar to using virtual environments in Python projects, this makes the npm pac
 
 ### When I `npm install`, I Get a Lot of Text: What do I do?!
 
-Managing external dependencies (packages/libraries that we use) in JavaScript projects is different than managing them in Ruby. In JavaScript, we use `npm` to manage dependencies, and those dependencies have other dependencies. Our dependencies may change over time, and those dependency's dependencies change, too! It's a lot.
+Managing external dependencies (packages/libraries that we use) in JavaScript projects is different than managing them in Python. In JavaScript, we use `npm` to manage dependencies, and those dependencies have other dependencies. Our dependencies may change over time, and those dependency's dependencies change, too! It's a lot.
 
 When we run `npm install`, `npm` may give us a lot of feedback about the state of our dependencies.
 
@@ -73,7 +78,7 @@ In addition to the provided unit tests, we provided a demo game application whic
 
   #### Conclusion
 
-  Just like our Ruby Adagrams project, we will only build the library code that captured all of the rules. We can use this demo game code to imagine how another program may hook into our codebase for logic.
+  Just like our Python Adagrams project, we will only build the library code that captured all of the rules. We can use this demo game code to imagine how another program may hook into our codebase for logic.
 
 </details>
 
@@ -84,7 +89,7 @@ File | Description
 --- | ---
 src/adagrams.js | This is the project code, your implementation should be written here as functions within the `Adagrams` object.
 test/adagrams.test.js | This file contains the unit tests for all functions you must implement.
-package.json | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `Gemfile` in our Ruby projects.
+package.json | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `requirements.txt` in our Python projects.
 package-lock.json | This is equivalent to the `Gemfile.lock` file in our Ruby projects.
 jest.config.js | This is a configuration file for the Jest testing framework.
 babel.config.js | This is a configuration file for the [Babel](https://babeljs.io/) compiler. For a short summary of why we use it, [click here](https://github.com/AdaGold/backbone-baseline#major-components)
@@ -103,14 +108,14 @@ const Adagrams = {
 
 The `Adagrams` object is used here to contain several attributes and functions listed in the Implementation Requirements section.
 
-We've previously seen JavaScript objects used as hashes, and seen them act sort of like class instances with `this`, and now modules. Because of the language's design JavaScript's object type is flexible enough to unify all three of these concepts which are each distinct in Ruby.
+We've previously seen JavaScript objects used as hashes, and seen them act sort of like class instances with `this`, and now modules. Because of the language's design JavaScript's object type is flexible enough to unify all three of these concepts which are distinct in Python.
 
 The code ends with this line:
 ```js
 export default Adagrams;
 ```
 
-This line is necessary to allow our unit test file (`test/adagrams.test.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Ruby, with JavaScript if we want to allow other files to access a piece of code we've written we must explicity [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
+This line is necessary to allow our unit test file (`test/adagrams.test.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Python, with JavaScript if we want to allow other files to access a piece of code we've written we must explicity [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
 
 ## Implementation Requirements
 ### Wave 1
