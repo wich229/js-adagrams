@@ -49,16 +49,16 @@ describe("Adagrams", () => {
     it("does not draw a letter too many times", () => {
       for (let i = 0; i < 1000; i++) {
         const drawn = Adagrams.drawLetters();
-        letter_freq = {};
-        for (letter of letters) {
-        }
-        if (letter in letter_freq) {
-          letter_freq[letter] += 1;
-        } else {
-          letter_freq[letter] = 1;
+        const letter_freq = {};
+        for (let letter of drawn) {
+          if (letter in letter_freq) {
+            letter_freq[letter] += 1;
+          } else {
+            letter_freq[letter] = 1;
+          }
         }
 
-        for (letter of letters) {
+        for (let letter of drawn) {
           expect(letter_freq[letter]).toBeLessThanOrEqual(LETTER_POOL[letter]);
         }
       }
