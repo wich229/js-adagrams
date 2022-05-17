@@ -94,44 +94,18 @@ This repository has a baseline structure for the project that includes several f
 
 | File                  | Description                                                                                                                                                                                                              |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| src/adagrams.js       | This is the project code, your implementation should be written here as functions within the `Adagrams` object.                                                                                                          |
-| test/adagrams.test.js | This file contains the unit tests for all functions you must implement.                                                                                                                                                  |
+| src/adagrams.js       | This is the project code, your implementation should complete each of the functions. Each function is exported.                                                                                                          |
+| test/adagrams.test.js | This file contains the unit tests for all functions you must implement. This function imports all the functions.                                                                                                                                                 |
 | package.json          | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `requirements.txt` in our Python projects.      |
 | package-lock.json     | [package-lock.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json) [captures the exact dependency tree stored at any point in time](https://blog.logrocket.com/why-you-should-use-package-lock-json/). |
 | jest.config.js        | This is a configuration file for the Jest testing framework.                                                                                                                                                             |
 | babel.config.js       | This is a configuration file for the [Babel](https://babeljs.io/) compiler. For a short summary of why we use it, [click here](https://github.com/AdaGold/backbone-baseline#major-components)                            |
 
-#### Provided code
-
-In the `src/adagrams.js` file there is a bit of code provided already. This is the structure that your code should follow in order for the pre-written unit tests to find and call your functions properly.
-
-The code first creates a constant `Adagrams` and assigns it an object literal:
-
-```js
-const Adagrams = {
-  drawLetters() {
-    // Implement this method for wave 1
-  },
-};
-```
-
-The `Adagrams` object is used here to contain several attributes and functions listed in the Implementation Requirements section.
-
-We've previously seen JavaScript objects used as hashes, and seen them act sort of like class instances with `this`, and now modules. Because of the language's design JavaScript's object type is flexible enough to unify all three of these concepts which are distinct in Python.
-
-The code ends with this line:
-
-```js
-export default Adagrams;
-```
-
-This line is necessary to allow our unit test file (`test/adagrams.test.js`) to import the `Adagrams` "module" and call the functions within it. Unlike Python, with JavaScript if we want to allow other files to access a piece of code we have written we must explicitly [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) it.
-
 ## Implementation Requirements
 
 ### Wave 1
 
-Our first job is to build a hand of 10 letters. To do so, add a function called `drawLetters` inside of the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
+Our first job is to build a hand of 10 letters. To do so, implement the function `drawLetters` in `src/adagrams.js`. This function should have the following properties:
 
 - No parameters
 - Returns an array of ten strings
@@ -168,7 +142,7 @@ Our first job is to build a hand of 10 letters. To do so, add a function called 
 
 Next, we need a way to check if an input word (a word a player submits) only uses characters that are contained within a collection (or hand) of drawn letters. Essentially, we need a way to check if the word is, indeed, an anagram of some or all of the given letters in the hand.
 
-To do so, add a function called `usesAvailableLetters` inside of the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
+To do so, implement the function named `usesAvailableLetters` in `src/adagrams.js`. This function should have the following properties:
 
 - Has two parameters:
   - `input`, the first parameter, describes some input word, and is a string
@@ -181,7 +155,7 @@ To do so, add a function called `usesAvailableLetters` inside of the `Adagrams` 
 
 We want a function that returns the score of a given word as defined by the Adagrams game.
 
-Make a function named `scoreWord` in the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
+Implement the function named `scoreWord` in `src/adagrams.js`. This method should have the following properties:
 
 - Has one parameter: `word`, which is a string of characters
 - Returns an integer representing the number of points
@@ -207,7 +181,7 @@ After several hands have been drawn, words have been submitted, checked, scored,
 
 #### Objective
 
-Add a function named `highestScoreFrom` in the `Adagrams` object in `src/adagrams.js`. This method should have the following properties:
+Implement the function named `highestScoreFrom` in `src/adagrams.js`. This method should have the following properties:
 
 - Has one parameter: `words`, which is an array of strings
 - Returns a single object that represents the data of a winning word and its score. The object should have the following keys:
@@ -236,7 +210,7 @@ Please ensure that your tests still run before project submission, of course. :)
 
 ### Optional: Wave 5
 
-Change the `Adagrams` object into a class named `Adagrams`!
+Encapsulate the functions in a class named `Adagrams`!
 
 - Ensure that the tests still pass
 - Remember, methods in classes are not comma-separated!

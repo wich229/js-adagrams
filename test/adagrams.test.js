@@ -133,7 +133,7 @@ describe("Adagrams", () => {
     });
   });
 
-  describe("highestScoreFrom", () => {
+  describe.skip("highestScoreFrom", () => {
     it("returns a hash that contains the word and score of best word in an array", () => {
       const words = ["X", "XX", "XXX", "XXXX"];
       const correct = { word: "XXXX", score: scoreWord("XXXX") };
