@@ -16,6 +16,8 @@ In this project, we will build the same Adagrams project from the Python curricu
 
 A test suite and sample game project is provided in order to practice TDD and verify the correct implementation. A complete project will pass all of the provided tests and have coverage of at least 90%.
 
+Note there are a handful of incomplete tests that currently throw exceptions. You should complete these tests and remove the exception.
+
 ## Getting Started
 
 After forking and cloning this repo you should `cd` to the project directory and run:
