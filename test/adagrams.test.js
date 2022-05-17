@@ -5,7 +5,7 @@ import {
   highestScoreFrom,
 } from "adagrams";
 
-LETTER_POOL = {
+const LETTER_POOL = {
   A: 9,
   B: 2,
   C: 2,
