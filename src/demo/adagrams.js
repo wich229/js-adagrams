@@ -1,10 +1,22 @@
-import Real from 'adagrams';
+import {
+  drawLetters,
+  usesAvailableLetters,
+  scoreWord,
+  highestScoreFrom,
+} from "adagrams";
+
+const Real = {
+  drawLetters,
+  usesAvailableLetters,
+  scoreWord,
+  highestScoreFrom,
+};
 
 const Stub = {
   drawLetters() {
-    const defaultLetters = ['H', 'E', 'L', 'L', 'O', 'W', 'O', 'R', 'L', 'D'];
+    const defaultLetters = ["H", "E", "L", "L", "O", "W", "O", "R", "L", "D"];
 
-    if(typeof Real.drawLetters === 'function') {
+    if (typeof Real.drawLetters === "function") {
       return Real.drawLetters() || defaultLetters;
     }
 
@@ -12,7 +24,7 @@ const Stub = {
   },
 
   usesAvailableLetters(input, lettersInHand) {
-    if(typeof Real.usesAvailableLetters === 'function') {
+    if (typeof Real.usesAvailableLetters === "function") {
       return Real.usesAvailableLetters(input, lettersInHand);
     }
 
@@ -20,7 +32,7 @@ const Stub = {
   },
 
   scoreWord(word) {
-    if(typeof Real.scoreWord === 'function') {
+    if (typeof Real.scoreWord === "function") {
       return Real.scoreWord(word);
     }
 
@@ -28,11 +40,11 @@ const Stub = {
   },
 
   highestScoreFrom(words) {
-    if(typeof Real.highestScoreFrom === 'function') {
+    if (typeof Real.highestScoreFrom === "function") {
       return Real.highestScoreFrom(words);
     }
 
-    if(words.length < 1) return null;
+    if (words.length < 1) return null;
 
     return {
       word: words[0],
