@@ -78,8 +78,6 @@ This will start the Adagrams prompt, and you can start a new game by typing `sta
 
 Once the game has started each player is prompted to play anagrams from the displayed letter bank until their turn completes. At the end of each round the player who played the best word (according to the logic you will implement in wave 4) is awarded points based on that word. Once all rounds are completed the game announced who won with the point total for that player.
 
-**NOTE**: If you would like to play the full version of the game before your implementation is complete you can check out the `solution/obfuscated` branch and follow the steps above.
-
 The game is fairly rudimentary and has a few bugs remaining, such as needing to type 'exit' to complete your turn. If you've completed all of the waves for this project and wish to continue working on terminal JavaScript code, feel free to ask your instructors for suggestions on bug fixes or improvements to make for the game code.
 
 #### Conclusion
