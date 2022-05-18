@@ -95,7 +95,7 @@ This repository has a baseline structure for the project that includes several f
 | File                  | Description                                                                                                                                                                                                              |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | src/adagrams.js       | This is the project code, your implementation should complete each of the functions. Each function is exported.                                                                                                          |
-| test/adagrams.test.js | This file contains the unit tests for all functions you must implement. This function imports all the functions.                                                                                                                                                 |
+| test/adagrams.test.js | This file contains the unit tests for all functions you must implement. This file imports the functions from `adagrams.js`.                                                                                                                                                 |
 | package.json          | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `requirements.txt` in our Python projects.      |
 | package-lock.json     | [package-lock.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json) [captures the exact dependency tree stored at any point in time](https://blog.logrocket.com/why-you-should-use-package-lock-json/). |
 | jest.config.js        | This is a configuration file for the Jest testing framework.                                                                                                                                                             |
@@ -105,7 +105,7 @@ This repository has a baseline structure for the project that includes several f
 
 ### Wave 1
 
-Our first job is to build a hand of 10 letters. To do so, implement the function `drawLetters` in `src/adagrams.js`. This function should have the following properties:
+Our first job is to build a hand of 10 letters. To do so, implement the function named `drawLetters` in `src/adagrams.js`. This function should have the following properties:
 
 - No parameters
 - Returns an array of ten strings
