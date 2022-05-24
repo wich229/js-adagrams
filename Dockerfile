@@ -12,5 +12,5 @@ WORKDIR /app
 ARG SUBMISSION_SUBFOLDER
 ADD $SUBMISSION_SUBFOLDER /app
 
-RUN npm install
+RUN yarn install
 RUN chmod +x test.sh

@@ -23,22 +23,22 @@ Note there are a handful of incomplete tests that currently throw exceptions. Yo
 After forking and cloning this repo you should `cd` to the project directory and run:
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
-Similar to using virtual environments in Python projects, this makes the npm package manager download and install any dependencies for the project (such as Jest).
+Similar to using virtual environments in Python projects, this makes the yarn package manager download and install any dependencies for the project (such as Jest).
 
-### When I `npm install`, I Get a Lot of Text: What do I do?!
+### When I `yarn install`, I Get a Lot of Text: What do I do?!
 
-Managing external dependencies (packages/libraries that we use) in JavaScript projects is different than managing them in Python. In JavaScript, we use `npm` to manage dependencies, and those dependencies have other dependencies. Our dependencies may change over time, and those dependency's dependencies change, too! It's a lot.
+Managing external dependencies (packages/libraries that we use) in JavaScript projects is different than managing them in Python. In JavaScript, we use `yarn` to manage dependencies, and those dependencies have other dependencies. Our dependencies may change over time, and those dependency's dependencies change, too! It's a lot.
 
-When we run `npm install`, `npm` may give us a lot of feedback about the state of our dependencies.
+When we run `yarn install`, `yarn` may give us a lot of feedback about the state of our dependencies.
 
 If we get **warnings about vulnerabilities,** it's likely that we won't worry about them, even if they're high risk or even if they're many (thousands?!).
 
 If we get a message about `gyp: No Xcode or CLT version`, we also won't worry about it. That error is because of changing operating systems. [You are free to do some independent research to fix this if you're excited, though!](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d).
 
-**The important thing is if we are able to run the tests.** After running `npm install`, follow the directions in the next section to run the tests. If your tests run and fail, then that's a great place to be! If your tests won't run, then you should seek help.
+**The important thing is if we are able to run the tests.** After running `yarn install`, follow the directions in the next section to run the tests. If your tests run and fail, then that's a great place to be! If your tests won't run, then you should seek help.
 
 ### Tests
 
@@ -47,13 +47,13 @@ We have provided unit tests for you to run. A complete project will pass all pro
 To run the tests, in the command line, navigate to the project root and then run:
 
 ```bash
-$ npm test test/adagrams.test.js
+$ yarn test test/adagrams.test.js
 ```
 
 After the tests run, there is a short table that summarizes the coverage for each file. You can view complete coverage details by running:
 
 ```bash
-$ npm run coverage
+$ yarn run coverage
 ```
 
 This is shorthand for the command `open coverage/lcov-report/index.html` and will open the coverage report in your default web browser.
@@ -71,7 +71,7 @@ In addition to the provided unit tests, we provided a demo game application that
 You can start the demo game application with the following command:
 
 ```bash
-$ npm run demo-game
+$ yarn run demo-game
 ```
 
 This will start the Adagrams prompt, and you can start a new game by typing `start` (or `start <num>` for a game with multiple players).
@@ -94,8 +94,8 @@ This repository has a baseline structure for the project that includes several f
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | src/adagrams.js       | This is the project code, your implementation should complete each of the functions. Each function is exported.                                                                                                          |
 | test/adagrams.test.js | This file contains the unit tests for all functions you must implement. This file imports the functions from `adagrams.js`.                                                                                                                                                 |
-| package.json          | This is the [npm project description file](https://docs.npmjs.com/getting-started/using-a-package.json) for this project. It includes all of the dependencies, much like `requirements.txt` in our Python projects.      |
-| package-lock.json     | [package-lock.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json) [captures the exact dependency tree stored at any point in time](https://blog.logrocket.com/why-you-should-use-package-lock-json/). |
+| package.json          | This is the [yarn project description file](https://classic.yarnpkg.com/lang/en/docs/package-json/) for this project. It includes all of the dependencies, much like `requirements.txt` in our Python projects.      |
+| yarn.lock     | [yarn.lock](https://classic.yarnpkg.com/lang/en/docs/yarn-lock/) captures the exact dependency tree stored at any point in time. |
 | jest.config.js        | This is a configuration file for the Jest testing framework.                                                                                                                                                             |
 | babel.config.js       | This is a configuration file for the [Babel](https://babeljs.io/) compiler. For a short summary of why we use it, [click here](https://github.com/AdaGold/backbone-baseline#major-components)                            |
 
