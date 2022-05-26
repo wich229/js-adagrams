@@ -15,12 +15,12 @@ const presets = [
 ];
 
 const plugins = [
-  ["module-resolver", {
-    "root": ["./src"]
-  }],
-  ["@babel/plugin-proposal-class-properties", {
-    "loose": true
-  }],
+  [
+    "module-resolver",
+    {
+      root: ["./src"],
+    },
+  ],
 ];
 
 module.exports = { presets, plugins };
