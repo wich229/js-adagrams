@@ -42,7 +42,7 @@ If we get a message about `gyp: No Xcode or CLT version`, we also won't worry ab
 
 ### Tests
 
-We have provided unit tests for you to run. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is provided and they may pass or fail depending upon the state of your code. However, you should focus on just the tests in `test/adagrams.test.js`.
+We have provided unit tests for you to run. As a reminder, a few of these unit tests are incomplete and currently throw exceptions. You should complete any incomplete tests and remove the exception. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is provided and they may pass or fail depending upon the state of your code. However, you should focus on just the tests in `test/adagrams.test.js`.
 
 To run the tests, in the command line, navigate to the project root and then run:
 
