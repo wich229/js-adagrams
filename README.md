@@ -12,7 +12,15 @@
 
 ## Goal
 
-In this project, we will build the same Adagrams project from the Python curriculum using JavaScript running on Node.js in the terminal. Please review [the original project](https://github.com/AdaGold/adagrams-py#readme) for an explanation of the Adagrams game design.
+In this project, we will build the same Adagrams project offered as an optional Python project during Precourse using JavaScript running on Node.js in the terminal. 
+
+An [anagram](https://en.wikipedia.org/wiki/Anagram) is a word or phrase formed by rearranging the letters of a different word or phrase. In this project you will be creating _Adagrams_, a game in which a player is given a random set of letters and must make an anagram using those letters.  Each submitted word will score points.
+
+While working on _Adagrams_, it may help to think of a physical metaphor for this game, such as other common word games like _Scrabble_ or _Bananagrams_. These games all feature a _pool_ of letter _tiles_ that the player _draws_ from.
+
+In this version of _Adagrams_, we will only be working with the English alphabet.
+
+![an image of a pile of letter tiles](images/letter-tiles.jpeg)
 
 A test suite and sample game project is provided in order to practice TDD and verify the correct implementation. A complete project will pass all of the provided tests and have coverage of at least 90%.
 
@@ -42,7 +50,7 @@ If we get a message about `gyp: No Xcode or CLT version`, we also won't worry ab
 
 ### Tests
 
-We have provided unit tests for you to run. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is provided and they may pass or fail depending upon the state of your code. However, you should focus on just the tests in `test/adagrams.test.js`.
+We have provided unit tests for you to run. As a reminder, a few of these unit tests are incomplete and currently throw exceptions. You should complete any incomplete tests and remove the exception. A complete project will pass all provided tests in the `test/adagrams.test.js` file. The other tests are for game logic that is provided and they may pass or fail depending upon the state of your code. However, you should focus on just the tests in `test/adagrams.test.js`.
 
 To run the tests, in the command line, navigate to the project root and then run:
 
@@ -82,7 +90,7 @@ The game is fairly rudimentary and has a few bugs remaining, such as needing to 
 
 #### Conclusion
 
-Just like our Python Adagrams project, we will only build the library code that captures all of the rules. We can use this demo game code to imagine how another program may hook into our codebase for logic.
+We will only build the library code that captures all of the rules. We can use this demo game code to imagine how another program may hook into our codebase for logic.
 
 </details>
 
