@@ -31,22 +31,22 @@ Note there are a handful of incomplete tests that currently throw exceptions. Yo
 After forking and cloning this repo you should `cd` to the project directory and run:
 
 ```bash
-$ yarn install
+$ yarn add
 ```
 
 Similar to using virtual environments in Python projects, this makes the yarn package manager download and install any dependencies for the project (such as Jest).
 
-### When I `yarn install`, I Get a Lot of Text: What do I do?!
+### When I `yarn add`, I Get a Lot of Text: What do I do?!
 
 Managing external dependencies (packages/libraries that we use) in JavaScript projects is different than managing them in Python. In JavaScript, we use `yarn` to manage dependencies, and those dependencies have other dependencies. Our dependencies may change over time, and those dependency's dependencies change, too! It's a lot.
 
-When we run `yarn install`, `yarn` may give us a lot of feedback about the state of our dependencies.
+When we run `yarn add`, `yarn` may give us a lot of feedback about the state of our dependencies.
 
 If we get **warnings about vulnerabilities,** it's likely that we won't worry about them, even if they're high risk or even if they're many (thousands?!).
 
 If we get a message about `gyp: No Xcode or CLT version`, we also won't worry about it. That error is because of changing operating systems. [You are free to do some independent research to fix this if you're excited, though!](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d).
 
-**The important thing is if we are able to run the tests.** After running `yarn install`, follow the directions in the next section to run the tests. If your tests run and fail, then that's a great place to be! If your tests won't run, then you should seek help.
+**The important thing is if we are able to run the tests.** After running `yarn add`, follow the directions in the next section to run the tests. If your tests run and fail, then that's a great place to be! If your tests won't run, then you should seek help.
 
 ### Tests
 
