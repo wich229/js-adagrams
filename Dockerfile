@@ -12,5 +12,5 @@ WORKDIR /app
 ARG SUBMISSION_SUBFOLDER
 ADD $SUBMISSION_SUBFOLDER /app
 
-RUN yarn install
+RUN yarn add
 RUN chmod +x test.sh
