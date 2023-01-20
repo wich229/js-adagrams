@@ -27,16 +27,6 @@ const LETTER_POOL = {
   Z: 1,
 };
 
-// const LETTER_SCORE = {
-//   1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
-//   2: ["D", "G"],
-//   3: ["B", "C", "M", "P"],
-//   4: ["F", "H", "V", "W", "Y"],
-//   5: "K",
-//   8: ["J", "X"],
-//   10: ["Q", "Z"],
-// };
-
 const LETTER_SCORE = {
   AEIOUNRST: 1,
   DG: 2,
@@ -48,35 +38,34 @@ const LETTER_SCORE = {
 };
 
 export const drawLetters = () => {
-  // const copy_pool = structuredClone(LETTER_POOL); #not able to use deep copy
-  const copy_pool = { ...LETTER_POOL };
-  let random_ten_letters = [];
-  const keys_arr = Object.keys(copy_pool);
+  // # not sure why not be able to use deep copy.
+  // const copy_pool = structuredClone(LETTER_POOL);
+  const copyPool = { ...LETTER_POOL };
+  let randomTenLetters = [];
+  const keysArr = Object.keys(copyPool);
 
-  let random_key;
-  while (random_ten_letters.length < 10) {
-    random_key = keys_arr[Math.floor(Math.random() * keys_arr.length)];
-    if (copy_pool[random_key] > 0) {
-      random_ten_letters.push(random_key);
-      copy_pool[random_key] -= 1;
-    } else if (copy_pool[random_key] === 0) {
-      continue;
+  let randomKey;
+  while (randomTenLetters.length < 10) {
+    randomKey = keysArr[Math.floor(Math.random() * keysArr.length)];
+    if (copyPool[randomKey] > 0) {
+      randomTenLetters.push(randomKey);
+      copyPool[randomKey] -= 1;
     }
   }
-  return random_ten_letters;
+  return randomTenLetters;
 };
 
 export const usesAvailableLetters = (input, lettersInHand) => {
-  const input_arr = input.split("");
-  if (input_arr.length > lettersInHand.length) {
+  const inputArr = input.split("");
+  if (inputArr.length > lettersInHand.length) {
     return false;
   }
 
-  for (let i = 0; i < input_arr.length; ++i) {
-    if (lettersInHand.includes(input_arr[i]) === false) {
+  for (let i = 0; i < inputArr.length; ++i) {
+    if (lettersInHand.includes(inputArr[i]) === false) {
       return false;
     }
-    let index = lettersInHand.indexOf(input_arr[i]);
+    let index = lettersInHand.indexOf(inputArr[i]);
     lettersInHand.splice(index, index + 1);
   }
   return true;
@@ -88,12 +77,12 @@ export const scoreWord = (word) => {
 
   word = word.toUpperCase();
   let total = 0;
-  let keys_arr = Object.keys(LETTER_SCORE);
+  let keysArr = Object.keys(LETTER_SCORE);
 
   for (let i = 0; i < word.length; ++i) {
-    for (let j = 0; j < keys_arr.length; ++j) {
-      if (keys_arr[j].indexOf(word[i]) !== -1) {
-        total += LETTER_SCORE[keys_arr[j]];
+    for (let j = 0; j < keysArr.length; ++j) {
+      if (keysArr[j].indexOf(word[i]) !== -1) {
+        total += LETTER_SCORE[keysArr[j]];
       }
     }
   }
@@ -105,5 +94,47 @@ export const scoreWord = (word) => {
 };
 
 export const highestScoreFrom = (words) => {
-  // Implement this method for wave 4
+  console.log(`words: ${words}`);
+
+  let words_socres_Obj = {};
+  let maxScore = 0;
+
+  // find each word's score and the max score
+  for (let i = 0; i < words.length; ++i) {
+    let eachScore = scoreWord(words[i]);
+    words_socres_Obj[words[i]] = eachScore;
+    if (eachScore > maxScore) maxScore = eachScore;
+  }
+
+  // loop through the words_socres_obj to get the sames max score words
+  for (let eachWord in words_socres_Obj) {
+    if (words_socres_Obj[eachWord] !== maxScore) {
+      delete words_socres_Obj[eachWord];
+    }
+  }
+
+  let result = { word: "", score: 0 };
+
+  if (Object.keys(words_socres_Obj).length > 1) {
+    let wordsArr = Object.keys(words_socres_Obj);
+    let wordsLengthArr = wordsArr.map((word) => word.length);
+    let minLengh = Math.min(...wordsLengthArr);
+    // if the words is 10 letters => choose the 10 letters (find)
+    if (wordsArr.find((word) => word.length === 10) !== undefined) {
+      let tenLettersWord = wordsArr.find((word) => word.length === 10);
+      result.word = tenLettersWord;
+      result.score = words_socres_Obj[tenLettersWord];
+      return result;
+    }
+    // if words different length => pick the shortest word (min)
+    // if words in same length => pick the first (if all the same min will retrun the only num)
+    let minOrfirstWord = wordsArr.find((word) => word.length === minLengh);
+    result.word = minOrfirstWord;
+    result.score = words_socres_Obj[minOrfirstWord];
+    return result;
+  } else {
+    result.word = Object.keys(words_socres_Obj)[0];
+    result.score = Object.values(words_socres_Obj)[0];
+    return result;
+  }
 };
