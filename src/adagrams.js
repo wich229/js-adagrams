@@ -94,8 +94,6 @@ export const scoreWord = (word) => {
 };
 
 export const highestScoreFrom = (words) => {
-  console.log(`words: ${words}`);
-
   let words_socres_Obj = {};
   let maxScore = 0;
 
@@ -119,6 +117,7 @@ export const highestScoreFrom = (words) => {
     let wordsArr = Object.keys(words_socres_Obj);
     let wordsLengthArr = wordsArr.map((word) => word.length);
     let minLengh = Math.min(...wordsLengthArr);
+
     // if the words is 10 letters => choose the 10 letters (find)
     if (wordsArr.find((word) => word.length === 10) !== undefined) {
       let tenLettersWord = wordsArr.find((word) => word.length === 10);
