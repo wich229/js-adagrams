@@ -1,3 +1,20 @@
+// class Adagrams {
+//   constructor() {
+//     this.input = input;
+//     this.lettersInHand = [];
+//     this.
+//   }
+
+//  const LETTER_POOL
+//  const LETTER_POOL
+
+//  drawLetters()
+//  usesAvailableLetters(input, lettersInHand)
+//  scoreWord (word)
+//  highestScoreFrom (words)
+
+// }
+
 const LETTER_POOL = {
   A: 9,
   B: 2,
@@ -41,18 +58,18 @@ export const drawLetters = () => {
   // # not sure why not be able to use deep copy.
   // const copy_pool = structuredClone(LETTER_POOL);
   const copyPool = { ...LETTER_POOL };
-  let randomTenLetters = [];
+  let lettersInHand = [];
   const keysArr = Object.keys(copyPool);
 
   let randomKey;
-  while (randomTenLetters.length < 10) {
+  while (lettersInHand.length < 10) {
     randomKey = keysArr[Math.floor(Math.random() * keysArr.length)];
     if (copyPool[randomKey] > 0) {
-      randomTenLetters.push(randomKey);
+      lettersInHand.push(randomKey);
       copyPool[randomKey] -= 1;
     }
   }
-  return randomTenLetters;
+  return lettersInHand;
 };
 
 export const usesAvailableLetters = (input, lettersInHand) => {
@@ -137,3 +154,5 @@ export const highestScoreFrom = (words) => {
     return result;
   }
 };
+
+// export default Adagrams
