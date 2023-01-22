@@ -1,15 +1,17 @@
-import {
-  drawLetters,
-  usesAvailableLetters,
-  scoreWord,
-  highestScoreFrom,
-} from "adagrams";
+// import {
+//   drawLetters,
+//   usesAvailableLetters,
+//   scoreWord,
+//   highestScoreFrom,
+// } from "adagrams";
+import Adagrams from "adagrams";
+const adagrams = new Adagrams();
 
 const Real = {
-  drawLetters,
-  usesAvailableLetters,
-  scoreWord,
-  highestScoreFrom,
+  drawLetters: adagrams.drawLetters(),
+  usesAvailableLetters: adagrams.usesAvailableLetters(),
+  scoreWord: adagrams.scoreWord(),
+  highestScoreFrom: adagrams.highestScoreFrom(),
 };
 
 const Stub = {
